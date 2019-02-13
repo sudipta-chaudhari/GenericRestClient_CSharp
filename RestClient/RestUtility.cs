@@ -10,7 +10,7 @@ namespace RestClient
     internal class RestUtility
     {
         public static async Task <object> CallServiceAsync<T>(string url, string operation, object requestBodyObject, string method, string username,
-            string password)
+            string password) where T: class
         {
             // Initialize an HttpWebRequest for the current URL.
             var webReq = (HttpWebRequest)WebRequest.Create(url);
